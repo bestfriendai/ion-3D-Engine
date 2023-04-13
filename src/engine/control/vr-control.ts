@@ -22,9 +22,6 @@ export class VRControls {
     vrRaycaster: any;
     teleMarkerMesh: any;
     vrSelectIntersects: any;
-    twitterLinkElm: any;
-    openseaLinkElm: any;
-    discordLinkElm: any;
     engine: any;
     controller1Connected: boolean;
     controller2Connected: boolean;

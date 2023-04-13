@@ -40,9 +40,9 @@ export class Engine{
             vrTeleportList: [], 
             framebufferScaleFactor: 2.0,
             showInstructions: true,
-        }, 
-        vrEnabled = false, 
-        graphicsOptions = {}, 
+        },
+        vrEnabled = false,
+        graphicsOptions = {},
         fullScreen = true,
         stats = false,
         statsOptions = {

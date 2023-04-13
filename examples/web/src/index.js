@@ -60,38 +60,6 @@ window.addEventListener('load', () => {
 
 
 
-    /* Loading GLTF assets: */
-    const gltfLoader = new GLTFLoader();
-
-    // Optional: Providing a DRACOLoader to decode compressed mesh data (in case compressed)
-    const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('https://unpkg.com/three@0.150.1/examples/jsm/libs/draco/');
-    gltfLoader.setDRACOLoader( dracoLoader );
-
-    gltfLoader.load(
-        '/resources/canvas.gltf',
-        ( gltf ) => {
-            scene.add( gltf.scene );
-            // gltf.scene.position.set(0, -2.22, 0);
-            // gltf.scene.scale.set(6,6,6);
-            gltf.scene.rotation.set(0, Math.PI, 0);
-
-            gltf.scene.traverse((child) => {
-                if (child.isMesh) {
-                    if (child.name === 'grass_ground') child.receiveShadow = true;
-                    child.castShadow = true;
-                }
-            });
-            console.log('GLTF scene loaded...');
-        }, 
-        (xhr) => {},
-        (error) => {
-            console.error( 'A GLTF error happened: ', error);
-        }
-    );
-
-
-
 
 
 
@@ -114,7 +82,7 @@ window.addEventListener('load', () => {
       
       stats: true,
       statsOptions: {
-        stats3D: true,
+        stats3D: false,
       },
 
       vrEnabled: true,
@@ -129,16 +97,20 @@ window.addEventListener('load', () => {
   });
 
 
-  const statsComponent = engine.engineStats.statsEntity.getComponent(ION.GUI_COMPONENT_TYPE);
-
-  engine.setRuntimeCallback(() => {
-    ION.positionInFront(engine.camera, statsComponent, -2, 2, -6);
-  });
-
-  engine.camera.position.set(-3, 4, 13);
-  engine.camera.rotateY(-Math.PI/7);
 
 
+  // const statsComponent = engine.engineStats.statsEntity.getComponent(ION.GUI_COMPONENT_TYPE);
+
+  // engine.setRuntimeCallback(() => {
+  //   ION.positionInFront(engine.camera, statsComponent, -2, 2, -6);
+  // });
+
+  // engine.camera.position.set(-3, 4, 13);
+  // engine.camera.rotateY(-Math.PI/7);
+
+  // engine.vrControl.vrButtonElm.addEventListener('click', () => {
+  //   engine.camera.position.set(-11, 4, 5);
+  // });
 
 
   const canvasContainerElement = document.getElementById('canvas-container');
@@ -146,10 +118,10 @@ window.addEventListener('load', () => {
       rootElement: canvasContainerElement,
       pixelRatio: 120,
   });
-  canvasGuiComponent.position.set(1.61, 3.12, 9.446);
-  canvasGuiComponent.rotateY(-Math.PI/4.5);
-  canvasGuiComponent.rotateX(-Math.PI/13);
-  canvasGuiComponent.scale.set(0.65, 0.65, 0.65);
+  // canvasGuiComponent.position.set(1.61, 3.12, 9.446);
+  // canvasGuiComponent.rotateY(-Math.PI/4.5);
+  // canvasGuiComponent.rotateX(-Math.PI/13);
+  // canvasGuiComponent.scale.set(0.65, 0.65, 0.65);
 
   /* Entity */
   const canvasGuiEntity = new ION.Entity();
@@ -175,22 +147,33 @@ window.addEventListener('load', () => {
 
 
 
-  // // const pickerElement = document.getElementsByClassName('color-picker')[0];
-  // const pickerElement = document.getElementById('color-picker');
-  // const pickerGuiComponent = new ION.GUIComponent({
-  //     rootElement: pickerElement,
-  //     pixelRatio: 120,
-  // });
-  // pickerGuiComponent.position.set(-3, 4, 10);
-  // pickerGuiComponent.rotateX(-0.07);
-
-  // /* Entity */
-  // const pickerGuiEntity = new ION.Entity();
-  // pickerGuiEntity.addComponent(pickerGuiComponent);
-  // engine.addEntity(pickerGuiEntity);
 
 
-  
+  // https://threejs.org/manual/en/primitives.html#Diagram-CylinderGeometry
+
+  const radiusTop =  10.0;  
+  const radiusBottom =  10.0;  
+  const height =  5.0;  
+  const radialSegments = 11;  
+  const heightSegments =  1;  
+  const openEnded = true;  
+  const thetaStart = Math.PI * 0.20;  
+  const thetaLength = Math.PI * 0.30;  
+  const geometry = new THREE.CylinderGeometry(
+    radiusTop, radiusBottom, height,
+    radialSegments, heightSegments,
+    openEnded,
+    thetaStart, thetaLength );
+
+
+    canvasGuiComponent.setGeometry(geometry);
+
+
+
+
+
+
+
 
 
 
