@@ -10,7 +10,8 @@ import { zIndex,
         SpaceControl, 
         FirstPersonControl, 
         ArcBallControl, 
-        FlyControl, } from './core/constants';
+        FlyControl,
+        OrbitControl, } from './core/constants';
 
 
 const ION = {
@@ -30,6 +31,7 @@ const ION = {
         FirstPersonControl,
         ArcBallControl,
         FlyControl,
+        OrbitControl,
 };
 
 
@@ -49,7 +51,8 @@ export { zIndex,
         SpaceControl,
         FirstPersonControl, 
         ArcBallControl,
-        FlyControl, };
+        FlyControl,
+        OrbitControl, };
 
 
 export default ION;

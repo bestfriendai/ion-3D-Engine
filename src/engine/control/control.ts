@@ -622,6 +622,30 @@ export class FlyieControls {
 }
 
 
+export class IONOrbitControls {
+    camera: any;
+    scene: any;
+    controls: any;
+    controlOptions: any;
+    canvas: any;
+
+    constructor(camera, renderer, controlOptions, canvas){
+        if (!camera) throw new TypeError('Camera object is not defined in IONOrbitControls!');
+        if (!renderer) throw new TypeError('Renderer object is not defined in IONOrbitControls!');
+        this.camera = camera;
+        this.controlOptions = controlOptions;
+        this.canvas = canvas;
+        
+        // https://threejs.org/docs/#examples/en/controls/OrbitControls
+        this.controls = new OrbitControls( camera, renderer.domElement );
+    }
+
+    updateControl = (delta) => {
+        this.controls.update(delta);
+    }
+}
+
+
 const instructionsHTMLTextSpaceControl = `
 <div id="instructions">
     <div id="clickPlay">
