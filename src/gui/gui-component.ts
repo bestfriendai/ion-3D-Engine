@@ -225,20 +225,20 @@ export class GUIComponent extends MeshComponent{
         // Whether to update the texture's uv-transform .matrix from the texture properties 
         // .offset, .repeat, .rotation, and .center. True by default. Set this to false 
         // if you are specifying the uv-transform matrix directly.
-        if (this.textureConstants.matrixAutoUpdate) this.htmlTexture.matrixAutoUpdate = this.textureConstants.matrixAutoUpdate;
+        if (typeof this.textureConstants.matrixAutoUpdate === 'boolean') this.htmlTexture.matrixAutoUpdate = this.textureConstants.matrixAutoUpdate;
 
         // Whether to generate mipmaps (if possible) for a texture. True by default. 
         // Set this to false if you are creating mipmaps manually.
         // works sort of like anti-aliasing
-        if (this.textureConstants.generateMipmaps) this.htmlTexture.generateMipmaps = this.textureConstants.generateMipmaps;
+        if (typeof this.textureConstants.generateMipmaps === 'boolean') this.htmlTexture.generateMipmaps = this.textureConstants.generateMipmaps;
 
         // If set to true, the alpha channel, if present, is multiplied into the color channels 
         // when the texture is uploaded to the GPU. Default is false.
-        if (this.textureConstants.premultiplyAlpha) this.htmlTexture.premultiplyAlpha  = this.textureConstants.premultiplyAlpha;
+        if (typeof this.textureConstants.premultiplyAlpha === 'boolean') this.htmlTexture.premultiplyAlpha  = this.textureConstants.premultiplyAlpha;
 
         // If set to true, the texture is flipped along the vertical axis when uploaded to the GPU. 
         // Default is true.
-        if (this.textureConstants.flipY) this.htmlTexture.flipY  = this.textureConstants.flipY;
+        if (typeof this.textureConstants.flipY === 'boolean') this.htmlTexture.flipY  = this.textureConstants.flipY;
 
         // 4 by default.
         if (this.textureConstants.unpackAlignment) this.htmlTexture.unpackAlignment  = this.textureConstants.unpackAlignment;
