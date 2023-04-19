@@ -171,6 +171,7 @@ engine.addSystem(guiSystem);
 engine.start();
 
 ```
+See the example [source code](https://samrun0.github.io/gui-examples/gui-sample.html) and [live demo](https://github.com/samrun0/samrun0.github.io/blob/main/gui-examples/gui-sample.html).
 
 
 ### Integrate With Your ThreeJS Project
