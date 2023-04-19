@@ -134,7 +134,7 @@ Using the module in a script tag:
 
 There are only a few steps to setup the engine and render HTML in a 3D scene:
 
-- **Step 1:** create an instance of ION Engine:
+- **Step 1:** create an instance of ION Engine.
 - **Step 2:** create a GUI component with a `rootElement` and add it to an entity. The HTML element is root of the DOM tree that we want to render in 3D.
 - **Step 3:** add the GUI system and start the engine.
 
