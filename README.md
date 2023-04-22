@@ -33,9 +33,8 @@
 <!-- /TOC -->
 
 
-Please visit ion 3D Engine [wiki](https://github.com/samrun0/ion-3D-Engine/wiki) for the full documentation!
+Please visit ion 3D Engine 🔗 [Home Page](https://ion-3d-engine.io/) for the full documentation!
 
-🔗 [Home Page](https://ion-3d-engine.io/)
 
 ❓ __If you need any help create a new issue here: ->__ [issues](https://github.com/samrun0/ion-3D-Engine/issues)
 
