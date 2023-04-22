@@ -2,9 +2,9 @@ import * as THREE from 'three';
 
 import { Entity } from '../core/entity';
 import { System } from '../core/systems/system';
-import { ArcBallControls, FirstPersonControls, FlyieControls, SpaceControls } from './control/control';
+import { ArcBallControls, FirstPersonControls, FlyieControls, IONOrbitControls, SpaceControls } from './control/control';
 import { createWebGLRenderer, getCamera } from './graphics'
-import { ArcBallControl, FirstPersonControl, FlyControl, SpaceControl, zIndex } from '../core/constants';
+import { ArcBallControl, FirstPersonControl, FlyControl, SpaceControl, OrbitControl, zIndex } from '../core/constants';
 import { VRControls } from './control/vr-control';
 import { getTemplateScene } from '../ion-3d-engine';
 import { hideLoadingScreen, showLoadingScreen } from '../core/utils/utils';
@@ -40,9 +40,9 @@ export class Engine{
             vrTeleportList: [], 
             framebufferScaleFactor: 2.0,
             showInstructions: true,
-        }, 
-        vrEnabled = false, 
-        graphicsOptions = {}, 
+        },
+        vrEnabled = false,
+        graphicsOptions = {},
         fullScreen = true,
         stats = false,
         statsOptions = {
@@ -63,6 +63,8 @@ export class Engine{
 
         this.vrEnabled = vrEnabled;
         this.controlOptions = controlOptions;
+        if(!Array.isArray(this.controlOptions['vrTeleportList'])) this.controlOptions['vrTeleportList'] = [];
+        
         this.setControl(control);
         
         this.stats = stats;
@@ -75,8 +77,8 @@ export class Engine{
         for (let [compType, component] of Object.entries(entity.components)){
             component.registerComponent({scene: this.scene});
 
-            // Adding gui components so ignores it when tryingt o teleport in VR mode...
-            if (compType.includes('gui')) this.controlOptions['vrTeleportList'].push(component);
+            // Adding gui components so ignores it when tryingt o teleport in VR mode...            
+            if (compType.includes('gui') && this.controlOptions['vrTeleportList']) this.controlOptions['vrTeleportList'].push(component);
 
             if (!this.entityRegistry.hasOwnProperty(compType)) {
                 this.entityRegistry[compType] = {};
@@ -249,12 +251,18 @@ export class Engine{
             case FlyControl:
                 this.control = new FlyieControls(this.camera, this.renderer, this.controlOptions, this.canvas);
                 break;
+            case OrbitControl:
+                this.control = new IONOrbitControls(this.camera, this.renderer, this.controlOptions, this.canvas);
+                
+                break;
             default:
                 if (control) {
                     this.control = control;
                     break;
                 }
                 this.control = new SpaceControls(this.camera, this.renderer, this.controlOptions, this.canvas);
+                this.control.setKeyEvents();
+                this.control.setLockEvents();
                 break;
         };
 

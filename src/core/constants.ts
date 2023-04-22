@@ -5,6 +5,7 @@ export const SpaceControl = 'SpaceControl';
 export const FirstPersonControl = 'FirstPersonControl';
 export const ArcBallControl = 'ArcBallControl';
 export const FlyControl = 'FlyControl';
+export const OrbitControl = 'OrbitControl';
 
 export const GUI_COMPONENT_TYPE  = 'gui_1000';
 
