@@ -41,11 +41,11 @@ Please visit ion 3D Engine 🔗 [ion-3d-engine.io](https://ion-3d-engine.io/) fo
 
 ## Introduction
 
-A simple and easy to use library to create 3D user interfaces for 3D websites and web-based VR applications. 
+ion Engine is a simple and easy to use library to create 3D user interfaces for 3D websites and web-based VR applications. 
 
-The ion Engine supports creating HTML user interfaces for WebGL and WebXR projects. This way we can create VR experiences that include interactive HTML elements such as buttons, forms, and other UI components.  Any supported HTML content can be converted to a 3D interface.
+It supports creating 3D HTML user interfaces for WebGL and WebXR projects. This way we can create VR experiences that include interactive HTML elements such as buttons, forms, and other UI components.  Any supported HTML content can be converted to a 3D interface.
 
-This library is powered by [Three.js](https://threejs.org/) and the Scene Hierarchy, Meshes (components here), and Materials are all Three.js objects and the [API](https://ion-3d-engine.io/) is consistent with Three.js API. Your components can also be integrated into your existing Three.js scene.
+It is powered by [Three.js](https://threejs.org/) and the Scene Hierarchy, Meshes (components here), and Materials are all Three.js objects and the [API](https://ion-3d-engine.io/) is consistent with Three.js API. Your components can also be integrated into your existing Three.js scene.
 
 <div align="center">
 	<a href="https://samrun0.github.io/gui-examples/gui-html-form.html"><img alt="Example Demo" target="_blank" src="https://samrun0.github.io/resources/examples-preview/gui-html-form.gif" width="35%" ></a>
