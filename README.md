@@ -214,7 +214,7 @@ Please visit ion 3D Engine [Guides](https://ion-3d-engine.io/#/website/fundament
 
 ### Entity-component-system (ECS)
 
-ion Engine is based on [entity-component-system (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) architecture which is a popular and powerful pattern to develop 3D applications. The building blocks of this model are:
+ion Engine utilizes [entity-component-system (ECS)](https://en.wikipedia.org/wiki/Entity_component_system) model which is a popular pattern suitable to develop 3D applications. It is designed to improve performance and scalability by organizing entities in a 3d world into modular and reusable components. Entities are objects or items in the 3D world, components are the attributes or properties of these entities, and systems are responsible for the behavior and interactions between the entities and their components. Moreover:
 
 - **Components:** they are encapsulated data holders and decoupled from the application logic. Components can be attached to entities to describe their attributes and how to be treated by systems.
 
@@ -222,7 +222,7 @@ ion Engine is based on [entity-component-system (ECS)](https://en.wikipedia.org/
 
 - **Systems:** a system is a process which acts on the entities. For example, a GUI system queries the entities with a GUI Component and handles the GUI related operations and renders them into the 3D scene.
 
-
+As an example, in a 3D world, a player entity might have components for movement, health, and inventory.
 
 ### ion Engine and ThreeJS
 
