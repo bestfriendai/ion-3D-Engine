@@ -129,6 +129,8 @@ Using the module in a script tag:
 
 ### GUI Components
 
+GUI Component is a class for creating interactive HTML user interfaces. It takes an HTML element as the root of the DOM tree                             that you want to render in the 3D scene. This HTML element can be any valid DOM element, such as a div, button, input, or any supported HTML element that can be rendered in a browser. Visit [GUI Component guide](https://ion-3d-engine.io/#/website/guides/gui-components.html) for more info.
+
 There are only a few steps to setup the engine and render HTML in a 3D scene:
 
 - **Step 1:** create an instance of ION Engine.
