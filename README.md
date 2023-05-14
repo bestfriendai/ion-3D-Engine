@@ -10,8 +10,16 @@
 
 <div align="center">
 
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Twitter%20%40ion3dengine)](https://twitter.com/ion3dengine) 
 
+[![Twitter][twitter]][twitter-url]
+[![Discord][discord]][discord-url]
+
+	
+
+[twitter]:https://img.shields.io/twitter/url?color=green&label=%40ion3dengine&logo=Twitter&style=plastic&url=https%3A%2F%2Ftwitter.com%2Fion3dengine
+[twitter-url]: https://twitter.com/ion3dengine
+[discord]: https://img.shields.io/discord/990666874876465172?logo=Discord
+[discord-url]: https://discord.gg/tvff4nHgsb
 </div>
 
 **Table of contents:**
